@@ -20,14 +20,19 @@ imaxAmp = 1
 iminPitch = 80
 imaxPitch = 1000
 
-ichan = 1 
+ichanPitch = 1 
+ichanAmp = 2 
+
 ictlno = 7
  
-        initc7  ichan, ictlno, 1            ; start at max. volume
-kamp    ctrl7   ichan, ictlno, iminAmp, imaxAmp   ; controller 7
-kpitch  ctrl7   ichan, ictlno, iminPitch, imaxPitch   ; controller 7
+        initc7  ichanPitch, ictlno, 0            ; start at max. volume
+        initc7  ichanAmp, ictlno, 1            ; start at max. volume
 
-asig    oscil   1, kpitch, 1
+kamp    ctrl7   ichanAmp, ictlno, iminAmp, imaxAmp   ; controller 7
+
+kpitch  ctrl7   ichanPitch, ictlno, iminPitch, imaxPitch   ; controller 7
+
+asig    oscil   kamp, kpitch, 1
         outs    asig, asig
 
 endin
