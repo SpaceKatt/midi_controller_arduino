@@ -2,12 +2,9 @@
 
 MIDI_CREATE_DEFAULT_INSTANCE();
 
-const int NUM_CTRLS = 2;
+const int NUM_CTRLS = 3;
 
-const int CTRL_00 = 0;
-const int CTRL_01 = 1;
-
-const int CTRL_PINS[] = {CTRL_00, CTRL_01};
+const int CTRL_PINS[] = {0, 1, 2};
 
 int VALS[NUM_CTRLS];
 
